@@ -1,0 +1,26 @@
+
+<%- include('../partials/header') %> 
+<%- include('../partials/navbar') %>
+
+<main class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card mx-auto" style="width: 23rem;">
+                <img src="<%=blog.img%>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><%=blog.date%></h5>
+                  <h5 class="card-title"><%=blog.title%></h5>
+                  <p class="card-text"><%= blog.desc%></p>
+                  
+                  <a href="/blogs/<%= blog._id %>/edit" class="btn btn-info btn-small">Edit</a>
+                  <form class="d-inline-block" action="/blogs/<%= blog._id %>?_method=DELETE " method="POST">
+                      <button class="btn btn-danger btn-small">Delete</button>
+                  </form>
+                  
+                </div>
+              </div>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer') %> 

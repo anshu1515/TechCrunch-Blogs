@@ -1,0 +1,27 @@
+
+<%- include('../partials/header') %>
+<%- include('../partials/navbar') %> 
+
+<main class="container">
+    <h1 class="display-5">TechCrunch Blogs</h1>
+
+    <div class="row" >
+        <% for(let item of blogs){ %> 
+        
+        <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card mx-auto " style="width: 24rem;  box-shadow: 0px 0px 3px #D3D3D3;">
+                <img src="<%= item.img %> " class="card-img-top" alt="..." style="height: 250px; width: 100%; padding: 10px;">
+                <div class="card-body">
+                  <p class="card-title" style="font-style: italic;"><%= item.date %></p>
+                  <h5 class="card-title" style="font-weight: bold;"><%= item.title.substring(0,55) %> </h5>
+                  <p class="card-text"><%= item.desc.substring(0,150)%></p>
+                  <a href="/blogs/<%= item._id %>" class="btn btn-outline-primary">Show</a>
+                </div>
+              </div>
+        </div>
+        <% } %>   
+    </div>
+</main>
+
+
+<%- include('../partials/footer') %> 
